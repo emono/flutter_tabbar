@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'nested_tab_bar_view.dart';
 
 void main() => runApp(MyApp());
 
@@ -49,27 +50,26 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
       bottomNavigationBar: Material(
         color: Colors.white,
         child: TabBar(
-            controller: _tabController,
-            indicatorColor: Colors.teal,
-            labelColor: Colors.teal,
-            unselectedLabelColor: Colors.black54,
-            tabs: <Widget>[
-              Tab(
-                icon: Icon(Icons.home),
-              ),
-              Tab(
-                icon: Icon(Icons.email),
-              ),
-              Tab(
-                icon: Icon(Icons.settings),
-              ),
-            ]),
+          controller: _tabController,
+          indicatorColor: Colors.teal,
+          labelColor: Colors.teal,
+          unselectedLabelColor: Colors.black54,
+          tabs: <Widget>[
+            Tab(
+              icon: Icon(Icons.home),
+            ),
+            Tab(
+              icon: Icon(Icons.email),
+            ),
+            Tab(
+              icon: Icon(Icons.settings),
+            ),
+          ],
+        ),
       ),
       body: TabBarView(
         children: <Widget>[
-          Center(
-            child: Text("Home"),
-          ),
+          NestedTabBar(),
           Center(
             child: Text("Email"),
           ),
